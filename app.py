@@ -41,4 +41,5 @@ st.pyplot(fig4)
 # ==== Visualization 1: Estimated vs Actual ====
 st.markdown("### Estimated vs Actual Earnings")
 fig1, ax1 = plt.subplots()
-sns.regplot(x='VALUE', y='ACTUAL
+sns.regplot(x='VALUE', y='ACTUAL', data=filtered_df, ax=ax1, scatter_kws={'alpha': 0.3}, line_kws={'color': 'red'})
+
