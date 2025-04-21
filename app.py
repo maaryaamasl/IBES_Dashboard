@@ -1,6 +1,4 @@
 
-# Save your Streamlit code to a file
-%%writefile app.py
 
 import streamlit as st
 import pandas as pd
