@@ -26,7 +26,7 @@ selected_ticker = st.selectbox("Select a company ticker", df['TICKER'].unique())
 filtered_df = df[df['TICKER'] == selected_ticker]
 
 # ==== Visualization 1: Estimated vs Actual ====
-st.markdown("### Estimated vs Actual Earnings (Hypothesis 1)")
+st.markdown("### Estimated vs Actual Earnings")
 fig1, ax1 = plt.subplots()
 sns.regplot(x='VALUE', y='ACTUAL', data=filtered_df, ax=ax1, scatter_kws={'alpha': 0.3}, line_kws={'color': 'red'})
 ax1.set_title(f"{selected_ticker}: Estimate vs Actual")
@@ -35,7 +35,7 @@ ax1.set_ylabel("Actual Earnings (ACTUAL)")
 st.pyplot(fig1)
 
 # ==== Visualization 2: Forecast Error Trend ====
-st.markdown("### Forecast Error Over Time (Hypothesis 3)")
+st.markdown("### Forecast Error Over Time")
 avg_error_by_year = df.groupby('YEAR')['ERROR'].mean().reset_index()
 fig2, ax2 = plt.subplots()
 ax2.plot(avg_error_by_year['YEAR'], avg_error_by_year['ERROR'], marker='o')
